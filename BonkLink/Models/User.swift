@@ -8,9 +8,7 @@
 import Foundation
 import RealmSwift
 
-//MIGHT NEED TO BRING IN OBJC GLOBAL USE HERE - @objcMembers
-
-class User: Object, ObjectKeyIdentifiable {
+@objcMembers class User: Object, ObjectKeyIdentifiable {
     dynamic var _id = UUID().uuidString
     dynamic var partition = "" // "user=_id"
     dynamic var userName = ""

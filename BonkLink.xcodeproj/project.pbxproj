@@ -17,6 +17,7 @@
 		9E38142226267BB200DBE310 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38142126267BB200DBE310 /* User.swift */; };
 		9E3814262626931700DBE310 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3814252626931700DBE310 /* Preferences.swift */; };
 		9E3814292626934300DBE310 /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3814282626934300DBE310 /* UserPhoto.swift */; };
+		9E38142F2626D46600DBE310 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38142E2626D46600DBE310 /* Login.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9E38142126267BB200DBE310 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9E3814252626931700DBE310 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		9E3814282626934300DBE310 /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
+		9E38142E2626D46600DBE310 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,15 +66,13 @@
 		9E38140726265D0600DBE310 /* BonkLink */ = {
 			isa = PBXGroup;
 			children = (
-				9E38142126267BB200DBE310 /* User.swift */,
+				9E38141E262664F500DBE310 /* AppState.swift */,
+				9E38142C2626D2CE00DBE310 /* Models */,
+				9E38142B2626D2BD00DBE310 /* Views */,
 				9E38140826265D0600DBE310 /* BonkLinkApp.swift */,
-				9E38140A26265D0600DBE310 /* ContentView.swift */,
 				9E38140C26265D0700DBE310 /* Assets.xcassets */,
 				9E38141126265D0700DBE310 /* Info.plist */,
 				9E38140E26265D0700DBE310 /* Preview Content */,
-				9E38141E262664F500DBE310 /* AppState.swift */,
-				9E3814252626931700DBE310 /* Preferences.swift */,
-				9E3814282626934300DBE310 /* UserPhoto.swift */,
 			);
 			path = BonkLink;
 			sourceTree = "<group>";
@@ -83,6 +83,25 @@
 				9E38140F26265D0700DBE310 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9E38142B2626D2BD00DBE310 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E38140A26265D0600DBE310 /* ContentView.swift */,
+				9E38142E2626D46600DBE310 /* Login.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9E38142C2626D2CE00DBE310 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E3814282626934300DBE310 /* UserPhoto.swift */,
+				9E38142126267BB200DBE310 /* User.swift */,
+				9E3814252626931700DBE310 /* Preferences.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E38142F2626D46600DBE310 /* Login.swift in Sources */,
 				9E38142226267BB200DBE310 /* User.swift in Sources */,
 				9E38141F262664F500DBE310 /* AppState.swift in Sources */,
 				9E3814262626931700DBE310 /* Preferences.swift in Sources */,

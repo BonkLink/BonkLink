@@ -8,8 +8,9 @@
 
 import RealmSwift
 
-//MIGHT NEED @objcMembers HERE 
-class Preferences: EmbeddedObject, ObjectKeyIdentifiable {
+
+
+@objcMembers class UserPreferences: EmbeddedObject, ObjectKeyIdentifiable {
     dynamic var displayName: String?
     dynamic var avatarImage: Photo?
 

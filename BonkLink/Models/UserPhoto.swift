@@ -7,8 +7,8 @@
 
 import RealmSwift
 import SwiftUI
-//MIGHT NEED @objcMembers 
-class Photo: EmbeddedObject, ObjectKeyIdentifiable {
+
+@objcMembers class Photo: EmbeddedObject, ObjectKeyIdentifiable {
     dynamic var _id = UUID().uuidString
     dynamic var thumbNail: Data?
     dynamic var picture: Data?
