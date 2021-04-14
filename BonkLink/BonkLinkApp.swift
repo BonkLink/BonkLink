@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import RealmSwift
+let app = RealmSwift.App(id: "bonklink-cytqk")
 
 @main
-struct BonkLinkApp: App {
+struct BonkLinkApp: SwiftUI.App {
+    @StateObject var state = AppState()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(state)
         }
     }
 }
