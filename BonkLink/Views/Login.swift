@@ -19,7 +19,42 @@ struct Login: View {
     
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 15) {
+            Text("BonkLink")
+                .font(.largeTitle).foregroundColor(Color.black)
+                .padding([.top, .bottom], 40)
+            HStack() {
+            TextField("Username", text: self.$userName)
+                .padding()
+                .cornerRadius(20.0)
+            SecureField("Password", text: self.$password)
+                .padding()
+                .cornerRadius(20.0)
+            }
+            HStack() {
+                Button(action: {}){
+                    Text("Sign In")
+                      .font(.headline)
+                      .foregroundColor(.white)
+                      .padding()
+                      .frame(width: 150, height: 50)
+                      .background(Color.green)
+                      .cornerRadius(15.0)
+                }
+                Button(action: {}) {
+                    Text("Sign-Up")
+                      .font(.headline)
+                      .foregroundColor(.white)
+                      .padding()
+                      .frame(width: 150, height: 50)
+                      .background(Color.blue)
+                      .cornerRadius(15.0)
+                }
+            }
+        }
+        .background(
+          LinearGradient(gradient: Gradient(colors: [.purple, .pink]), startPoint: .top, endPoint: .bottom)
+            .edgesIgnoringSafeArea(.all))
     }
 }
 
