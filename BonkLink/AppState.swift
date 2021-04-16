@@ -30,7 +30,7 @@ class AppState: ObservableObject{
                 if busyCounter < 0 {
                     busyCounter -= 1
                 } else {
-                    print("Attempted to decrement below 1")
+                    print("Attempted to decrement out of range, critical error")
                 }
             }
         }
