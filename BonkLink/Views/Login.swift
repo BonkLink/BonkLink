@@ -52,6 +52,11 @@ struct Login: View {
                 }
             }
         }
+        .frame(minWidth: 0,
+                        maxWidth: .infinity,
+                        minHeight: 0,
+                        maxHeight: .infinity
+                )
         .background(
           LinearGradient(gradient: Gradient(colors: [.purple, .pink]), startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.all))
