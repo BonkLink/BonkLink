@@ -18,6 +18,11 @@
 		9E3814262626931700DBE310 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3814252626931700DBE310 /* Preferences.swift */; };
 		9E3814292626934300DBE310 /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3814282626934300DBE310 /* UserPhoto.swift */; };
 		9E38142F2626D46600DBE310 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38142E2626D46600DBE310 /* Login.swift */; };
+		BF6536A3262CF01F0054E29F /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6536A2262CF01F0054E29F /* LogoutButton.swift */; };
+		BF6536A6262CF0470054E29F /* UserAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6536A5262CF0470054E29F /* UserAvatarView.swift */; };
+		BF6536A9262CF0670054E29F /* UserProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6536A8262CF0670054E29F /* UserProfileButton.swift */; };
+		BF6536AC262CF0970054E29F /* OnlineAlertSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6536AB262CF0970054E29F /* OnlineAlertSettings.swift */; };
+		BF6536AF262CF1180054E29F /* SetProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6536AE262CF1180054E29F /* SetProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		9E3814252626931700DBE310 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		9E3814282626934300DBE310 /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
 		9E38142E2626D46600DBE310 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		BF6536A2262CF01F0054E29F /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
+		BF6536A5262CF0470054E29F /* UserAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarView.swift; sourceTree = "<group>"; };
+		BF6536A8262CF0670054E29F /* UserProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileButton.swift; sourceTree = "<group>"; };
+		BF6536AB262CF0970054E29F /* OnlineAlertSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineAlertSettings.swift; sourceTree = "<group>"; };
+		BF6536AE262CF1180054E29F /* SetProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +98,8 @@
 		9E38142B2626D2BD00DBE310 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF65369C262CEB490054E29F /* User & Profle Shit */,
 				9E38140A26265D0600DBE310 /* ContentView.swift */,
-				9E38142E2626D46600DBE310 /* Login.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -102,6 +112,19 @@
 				9E3814252626931700DBE310 /* Preferences.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BF65369C262CEB490054E29F /* User & Profle Shit */ = {
+			isa = PBXGroup;
+			children = (
+				9E38142E2626D46600DBE310 /* Login.swift */,
+				BF6536A2262CF01F0054E29F /* LogoutButton.swift */,
+				BF6536A5262CF0470054E29F /* UserAvatarView.swift */,
+				BF6536A8262CF0670054E29F /* UserProfileButton.swift */,
+				BF6536AB262CF0970054E29F /* OnlineAlertSettings.swift */,
+				BF6536AE262CF1180054E29F /* SetProfileView.swift */,
+			);
+			path = "User & Profle Shit";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,13 +203,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6536A9262CF0670054E29F /* UserProfileButton.swift in Sources */,
 				9E38142F2626D46600DBE310 /* Login.swift in Sources */,
 				9E38142226267BB200DBE310 /* User.swift in Sources */,
+				BF6536AC262CF0970054E29F /* OnlineAlertSettings.swift in Sources */,
 				9E38141F262664F500DBE310 /* AppState.swift in Sources */,
+				BF6536A3262CF01F0054E29F /* LogoutButton.swift in Sources */,
 				9E3814262626931700DBE310 /* Preferences.swift in Sources */,
 				9E38140B26265D0600DBE310 /* ContentView.swift in Sources */,
 				9E38140926265D0600DBE310 /* BonkLinkApp.swift in Sources */,
+				BF6536A6262CF0470054E29F /* UserAvatarView.swift in Sources */,
 				9E3814292626934300DBE310 /* UserPhoto.swift in Sources */,
+				BF6536AF262CF1180054E29F /* SetProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
