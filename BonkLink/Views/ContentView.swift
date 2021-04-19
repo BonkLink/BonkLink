@@ -23,7 +23,7 @@ struct ContentView: View {
                 VStack{
                     if(currState.isUserLoggedIn){
                         if(currState.user != nil) && (!currState.user!.isProfileSet || showProfile){
-                            //Display Profile Here
+                            SetProfileView(isPresented: $showProfile)
                         }
                         else{
                             //Show Chatrooms list here

@@ -43,10 +43,11 @@ struct LogoutButton: View {
 
 struct LogoutButton_Previews: PreviewProvider {
     static var previews: some View {
-        LogoutButton()
+        AppearancePreviews(
+            LogoutButton()
                 .environmentObject(AppState())
                 .previewLayout(.sizeThatFits)
                 .padding()
-        
+        )
     }
 }

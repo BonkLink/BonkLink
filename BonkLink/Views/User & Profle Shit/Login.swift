@@ -162,13 +162,17 @@ struct Login: View {
     }
 }
 
-
-
-
-struct Login_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        Login()
+        AppearancePreviews(
+            Group {
+                Login()
+                    .environmentObject(AppState())
+                Landscape(
+                    Login()
+                        .environmentObject(AppState())
+                )
+            }
+        )
     }
 }
-
-
