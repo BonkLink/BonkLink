@@ -3,7 +3,7 @@
 //  PhotoCaptureController.swift
 //  RChat
 //
-//  Created by Andrew Morgan on 24/11/2020.
+//  Created by Jacques Sarraffe on 4/20/420.
 //
 import UIKit
 import SwiftUI
@@ -88,7 +88,8 @@ extension PhotoCaptureController: UIImagePickerControllerDelegate, UINavigationC
         photo.picture = result.jpegData(compressionQuality: 0.8)
         photo.thumbNail = result.jpegData(compressionQuality: 0.8)
         
-//        photo.thumbNail = result.thumbnail(size: imageSizeThumbnails)?.jpegData(compressionQuality: 0.8)
+        
+       photo.thumbNail = result.thumbnail(size: imageSizeThumbnails)?.jpegData(compressionQuality: 0.8)
         photo.thumbNail = result.jpegData(compressionQuality: 0.8)
         photoTaken?(self, photo)
     }

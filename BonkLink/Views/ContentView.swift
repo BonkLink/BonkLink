@@ -24,6 +24,8 @@ struct ContentView: View {
                     if(currState.isUserLoggedIn){
                         if(currState.user != nil) && (!currState.user!.isProfileSet || showProfile){
                             SetProfileView(isPresented: $showProfile)
+                               .environment(\.realmConfiguration,
+                                           app.currentUser!.configuration(partitionValue: "user=\(currState.user?._id ?? "")"))
                         }
                         else{
                             //Show Chatrooms list here

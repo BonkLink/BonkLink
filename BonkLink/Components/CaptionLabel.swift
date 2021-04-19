@@ -2,8 +2,7 @@
 //  CaptionLabel.swift
 //  RChat
 //
-//  Created by Andrew Morgan on 23/11/2020.
-//
+//  Created by Jacques Sarraffe on 4/20/420.//
 import SwiftUI
 
 struct CaptionLabel: View {

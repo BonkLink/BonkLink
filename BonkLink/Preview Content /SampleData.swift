@@ -30,6 +30,7 @@ extension AppState {
 
 
 
+
 extension Photo {
     convenience init(photoName: String) {
         self.init()
@@ -54,5 +55,6 @@ extension Photo: Samplable {
     static var sample3: Photo { Photo(photoName: "freddy") }
     static var spud: Photo { Photo(photoName: "spud\(Int.random(in: 1...8))") }
 }
+
 
 

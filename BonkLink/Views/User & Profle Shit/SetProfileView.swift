@@ -2,8 +2,7 @@
 //  SetProfileView.swift
 //  RChat
 //
-//  Created by Andrew Morgan on 24/11/2020.
-//
+//  Created by Jacques Sarraffe on 4/20/420.//
 import UIKit
 import SwiftUI
 import RealmSwift
