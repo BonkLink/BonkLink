@@ -11,12 +11,12 @@ let app = RealmSwift.App(id: "bonklink-cytqk")
 
 @main
 struct BonkLinkApp: SwiftUI.App {
-    @StateObject var state = AppState()
+    @ObservedObject var state = SingletonVM.sharedInstance.globalViewModel
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(state)
+                
         }
     }
 }

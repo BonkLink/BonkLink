@@ -10,7 +10,7 @@ import RealmSwift
 
 struct Login: View {
     
-    @EnvironmentObject var state: AppState
+     var state = SingletonVM.sharedInstance.globalViewModel
     
     @State private var userName = ""
     @State private var password = ""
@@ -59,7 +59,7 @@ struct Login: View {
             }
             
             HStack() {
-                Button(action: {userActionLogin(userName: userName, password: password)}){
+                Button(action: {self.userActionLogin(userName: userName, password: password)}){
                     Text("Sign In")
                       .font(.headline)
                       .foregroundColor(.white)
@@ -73,7 +73,7 @@ struct Login: View {
                 }
              
                 Button(action: {
-                    signupUser(userName: userName, passwd: password)
+                    self.signupUser(userName: userName, passwd: password)
                 }) {
                     Text("Sign-Up")
                       .font(.headline)
@@ -83,7 +83,18 @@ struct Login: View {
                       .background(Color.blue)
                       .cornerRadius(15.0)
                 }
-
+                
+                Button("yep"){
+                    print(state.user)
+                }
+                
+                if(!state.isUserLoggedIn){
+                    Text("monkaS")
+                }
+                else{
+                    Text("LOGGERS")
+                }
+                
             }
         }
         
@@ -96,7 +107,7 @@ struct Login: View {
           LinearGradient(gradient: Gradient(colors: [.purple, .pink]), startPoint: .top, endPoint: .bottom))
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         
-//
+
 //        if signup {
 //            Text("YEP!")
 //                .transition(.slide)
@@ -107,14 +118,14 @@ struct Login: View {
     
     func signupUser(userName: String, passwd: String){
         if userName.isEmpty || passwd.isEmpty{
-            state.indicateActivity = false
+            self.state.indicateActivity = false
             return
         }
         self.state.error = nil
         app.emailPasswordAuth.registerUser(email: userName, password: passwd)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: {
-                state.indicateActivity = false
+                self.state.indicateActivity = false
                 switch $0 {
                 case .finished:
                     break
@@ -133,21 +144,23 @@ struct Login: View {
     
     
     func userActionLogin(userName: String, password: String){
-        state.indicateActivity = true;
-        login(username: userName, passwd: password)
+        self.state.indicateActivity = true;
+        self.login(username: userName, passwd: password)
+        
+        print(state.user)
     }
     
     
     func login(username: String, passwd: String){
         if username.isEmpty || passwd.isEmpty{
-            state.indicateActivity = false
+            self.state.indicateActivity = false
             return
         }
         self.state.error = nil
         app.login(credentials: .emailPassword(email: username, password: passwd))
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: {
-                state.indicateActivity = false
+                self.state.indicateActivity = false
                 switch $0{
                 case .finished:
                     break
@@ -156,7 +169,7 @@ struct Login: View {
                 }
             }, receiveValue: {
                 self.state.error = nil
-                state.loginPublish.send($0)
+                self.state.loginPublish.send($0)
             })
             .store(in: &state.cancellable)
     }
@@ -164,15 +177,6 @@ struct Login: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        AppearancePreviews(
-            Group {
                 Login()
-                    .environmentObject(AppState())
-                Landscape(
-                    Login()
-                        .environmentObject(AppState())
-                )
-            }
-        )
     }
 }

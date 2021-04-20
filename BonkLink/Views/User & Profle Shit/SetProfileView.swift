@@ -8,7 +8,7 @@ import SwiftUI
 import RealmSwift
 
 struct SetProfileView: View {
-    @EnvironmentObject var state: AppState
+     var state = SingletonVM.sharedInstance.globalViewModel
     @Environment(\.realm) var userRealm
     @AppStorage("shouldShareLocation") var shouldShareLocation = false
     
@@ -91,13 +91,13 @@ struct SetProfileView: View {
 
 struct SetProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        let previewState: AppState = .sample
+//        let previewState: AppState = .sample
         return AppearancePreviews(
             NavigationView {
                 SetProfileView(isPresented: .constant(true))
             }
         )
-        .environmentObject(previewState)
+//        .environmentObject(previewState)
     }
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-@objcMembers class User: Object, ObjectKeyIdentifiable {
+@objcMembers class Users: Object, ObjectKeyIdentifiable {
     dynamic var _id = UUID().uuidString
     dynamic var partition = "" // "user=_id"
     dynamic var userName = ""

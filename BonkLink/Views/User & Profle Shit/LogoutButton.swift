@@ -7,13 +7,14 @@ import RealmSwift
 import SwiftUI
 
 struct LogoutButton: View {
-    @EnvironmentObject var state: AppState
+     var state = SingletonVM.sharedInstance.globalViewModel
     @Environment(\.realm) var userRealm
     
     var action: () -> Void = {}
     
     var body: some View {
         Button("Log Out") {
+//            logout()
             state.indicateActivity = true
             do {
                 try userRealm.write {
@@ -22,9 +23,9 @@ struct LogoutButton: View {
             } catch {
                 state.error = "Unable to open Realm write transaction"
             }
-            logout()
+            
         }
-        .disabled(state.indicateActivity)
+  
     }
     
     private func logout() {
@@ -44,7 +45,7 @@ struct LogoutButton_Previews: PreviewProvider {
     static var previews: some View {
         AppearancePreviews(
             LogoutButton()
-                .environmentObject(AppState())
+                
                 .previewLayout(.sizeThatFits)
                 .padding()
         )

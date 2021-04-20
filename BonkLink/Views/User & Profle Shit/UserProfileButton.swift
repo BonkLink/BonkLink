@@ -24,6 +24,6 @@ struct UserProfileButton_Previews: PreviewProvider {
         )
         .padding()
         .previewLayout(.sizeThatFits)
-        .environmentObject(AppState.sample)
+//        .environmentObject(AppState.sample)
     }
 }

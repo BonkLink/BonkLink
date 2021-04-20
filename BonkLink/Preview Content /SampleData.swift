@@ -21,7 +21,7 @@ extension Date {
 }
 
 extension AppState {
-    convenience init(user: User) {
+    convenience init(user: Users) {
         self.init()
         self.user = user
     }

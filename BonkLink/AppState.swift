@@ -37,7 +37,7 @@ class AppState: ObservableObject{
     }
     
     
-    var user: User?
+    var user: Users?
     
     var isUserLoggedIn: Bool{
         app.currentUser != nil && user != nil && app.currentUser?.state == .loggedIn
@@ -74,7 +74,7 @@ class AppState: ObservableObject{
                 }
             }, receiveValue: { realm in
                 print("User realm location: \(realm.configuration.fileURL!.path)")
-                self.user = realm.objects(User.self).first
+                self.user = realm.objects(Users.self).first
                 do{
                     try realm.write {
                         self.user?.presenceState = .onLine

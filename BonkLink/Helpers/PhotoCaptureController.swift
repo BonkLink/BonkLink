@@ -89,7 +89,7 @@ extension PhotoCaptureController: UIImagePickerControllerDelegate, UINavigationC
         photo.thumbNail = result.jpegData(compressionQuality: 0.8)
         
         
-       photo.thumbNail = result.thumbnail(size: imageSizeThumbnails)?.jpegData(compressionQuality: 0.8)
+//       photo.thumbNail = result.thumbnail(size: imageSizeThumbnails)?.jpegData(compressionQuality: 0.8)
         photo.thumbNail = result.jpegData(compressionQuality: 0.8)
         photoTaken?(self, photo)
     }
