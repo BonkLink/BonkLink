@@ -59,7 +59,8 @@ struct Login: View {
             }
             
             HStack() {
-                Button(action: {self.userActionLogin(userName: userName, password: password)}){
+          
+                Button(action: {if(state.user == nil){self.userActionLogin(userName: userName, password: password)}}){
                     Text("Sign In")
                       .font(.headline)
                       .foregroundColor(.white)
@@ -71,6 +72,7 @@ struct Login: View {
                       .cornerRadius(15.0)
                     
                 }
+
              
                 Button(action: {
                     self.signupUser(userName: userName, passwd: password)
@@ -83,18 +85,7 @@ struct Login: View {
                       .background(Color.blue)
                       .cornerRadius(15.0)
                 }
-                
-                Button("yep"){
-                    print(state.user)
-                }
-                
-                if(!state.isUserLoggedIn){
-                    Text("monkaS")
-                }
-                else{
-                    Text("LOGGERS")
-                }
-                
+
             }
         }
         
@@ -106,13 +97,13 @@ struct Login: View {
         .background(
           LinearGradient(gradient: Gradient(colors: [.purple, .pink]), startPoint: .top, endPoint: .bottom))
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-        
+        .navigationBarHidden(true)
 
 //        if signup {
 //            Text("YEP!")
 //                .transition(.slide)
 //        }
-    }
+        }
     
     
     
@@ -145,7 +136,7 @@ struct Login: View {
     
     func userActionLogin(userName: String, password: String){
         self.state.indicateActivity = true;
-        self.login(username: userName, passwd: password)
+        login(username: userName, passwd: password)
         
         print(state.user)
     }

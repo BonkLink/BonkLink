@@ -8,33 +8,35 @@ import SwiftUI
 
 struct LogoutButton: View {
      var state = SingletonVM.sharedInstance.globalViewModel
-    @Environment(\.realm) var userRealm
+//    @Environment(\.realm) var userRealm
     
-    var action: () -> Void = {}
     
     var body: some View {
         Button("Log Out") {
-//            logout()
             state.indicateActivity = true
-            do {
-                try userRealm.write {
-                    state.user?.presenceState = .offLine
+            if let realm = state.userRealm {
+                do {
+                    try realm.write {
+                        state.user?.presenceState = .offLine
+                    }
+                } catch {
+                    state.error = "Unable to open Realm write transaction"
                 }
-            } catch {
-                state.error = "Unable to open Realm write transaction"
+                logout()
             }
-            
         }
-  
+        
+        
     }
     
     private func logout() {
-        action()
+       
         app.currentUser?.logOut()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in
             }, receiveValue: {
                 state.indicateActivity = false
+//                state.user?.presence = "Off-Line"
                 state.logoutPublish.send($0)
             })
             .store(in: &state.cancellable)

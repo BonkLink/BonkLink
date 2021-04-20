@@ -24,43 +24,28 @@ struct ContentView: View {
             ZStack{
                 VStack{
                     if currState.isUserLoggedIn {
-                        HStack{
-                        Text("LOGGED")
-                        LogoutButton()
-                        }
+//                        HStack{
+//                        Text("LOGGED")
+//                        LogoutButton()
+//                        }
+//
                         
-//                        if(currState.user != nil) && (!currState.user!.isProfileSet || showProfile){
-//                            SetProfileView(isPresented: $showProfile)
-//                               .environment(\.realmConfiguration,
-//                                           app.currentUser!.configuration(partitionValue: "user=\(currState.user?._id ?? "")"))
-//                        }
-//                        else if(currState.user?.userName != nil){
-//                            Text("Logged in with user profile set")
-//                            LogoutButton();
-//                            Button("checK"){
-//                                print(app.currentUser?.id)
-//                                action()
-//                                app.currentUser?.logOut()
-//                                    .receive(on: DispatchQueue.main)
-//                                    .sink(receiveCompletion: { _ in
-//                                    }, receiveValue: {
-//                                        currState.indicateActivity = false
-//                                        currState.logoutPublish.send($0)
-//                                    })
-//                                    .store(in: &currState.cancellable)
-//                            }
-//                        }
+                        
+                        if(currState.user?.userName != nil) && (!currState.user!.isProfileSet || showProfile){
+                            SetProfileView(isPresented: $showProfile)
+                               .environment(\.realmConfiguration,
+                                           app.currentUser!.configuration(partitionValue: "user=\(currState.user?._id ?? "")"))
+                        }
+                        else if(currState.user?.isProfileSet == true){
+                            Text("Logged in with user profile set")
+                            LogoutButton();
+
+                        }
                     }
                     //otherwise, user isn't logged in
                     else{
    
                     Login()
-                        Button("stater"){
-                            print(currState.user?.userName)
-                            print(currState.isUserLoggedIn)
-                            currState.busyCounter = currState.busyCounter-1
-                        }
-                        Text(String(currState.busyCounter))
                     }
                     if let error = currState.error {
                               Text("Error: \(error)")
@@ -68,11 +53,8 @@ struct ContentView: View {
                     }
                     
                 }
-                if currState.busyCounter > 1 {
-                    Text("Working With Realm")
-                }
 
-                
+
             }
             
         }

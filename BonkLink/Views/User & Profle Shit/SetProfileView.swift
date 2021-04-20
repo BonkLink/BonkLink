@@ -48,10 +48,13 @@ struct SetProfileView: View {
         }
         .onAppear { initData() }
         .padding()
-        .navigationBarTitle("Edit Profile", displayMode: .inline)
+     
         .navigationBarItems(
-            leading: Button(action: { isPresented = false }) { BackButton() },
-            trailing: state.isUserLoggedIn ? LogoutButton(action: { isPresented = false }) : nil)
+            leading: Button(action: { isPresented = false }) { BackButton() }
+        ,
+            trailing:  LogoutButton()
+        )
+        .navigationBarHidden(!state.isUserLoggedIn)
     }
     
     private func initData() {
@@ -60,6 +63,7 @@ struct SetProfileView: View {
     }
     
     private func saveProfile() {
+        
         state.indicateActivity = true
         do {
             try userRealm.write {
@@ -73,6 +77,8 @@ struct SetProfileView: View {
                     state.user?.userPreferences?.avatarImage = newPhoto
                 }
                 state.user?.presenceState = .onLine
+                
+                print(state.user?.isProfileSet)
             }
         } catch {
             state.error = "Unable to open Realm write transaction"
