@@ -14,7 +14,7 @@ import RealmSwift
     dynamic var userName = ""
     dynamic var userPreferences: UserPreferences?
     dynamic var lastSeenAt: Date?
-//    var conversations = List<Conversation>()
+    var conversations = List<Conversation>()
     dynamic var presence = "Off-Line"
 
     var isProfileSet: Bool { !(userPreferences?.isEmpty ?? true) }
