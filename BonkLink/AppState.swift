@@ -14,10 +14,10 @@ class AppState: ObservableObject{
     @Published var error: String?
     @Published var busyCounter = 0
     
-    var loginPublish = PassthroughSubject<RealmSwift.User, Error>()
-    var logoutPublish = PassthroughSubject<Void, Error>()
-    let userRealmPublish = PassthroughSubject<Realm, Error>()
-    var cancellable = Set<AnyCancellable>()
+    @Published var loginPublish = PassthroughSubject<RealmSwift.User, Error>()
+    @Published var logoutPublish = PassthroughSubject<Void, Error>()
+    @Published var userRealmPublish = PassthroughSubject<Realm, Error>()
+    @Published var cancellable = Set<AnyCancellable>()
     
     var indicateActivity:Bool{
         get{
@@ -25,26 +25,21 @@ class AppState: ObservableObject{
         }
         set (newState){
             if newState{
-                busyCounter += 1
-            } else {
-                if busyCounter < 0 {
-                    busyCounter -= 1
-                } else {
-                    print("Attempted to decrement below 1")
-                }
-            }
+                busyCounter - 1
         }
     }
-    
-    
-    var user: User?
+    }
+    @Published var chatterRealm: Realm?
+    @Published var userRealm: Realm?
+    @Published var user: Users?
     
     var isUserLoggedIn: Bool{
-        app.currentUser != nil && user != nil && app.currentUser?.state == .loggedIn
+        app.currentUser != nil && userRealm != nil && app.currentUser?.state == .loggedIn
     }
     
     init(){
         _ = app.currentUser?.logOut()
+        userRealm = nil
         initLoginPublish()
         initUserRealmPublish()
         initLogoutPublisher()
@@ -73,8 +68,9 @@ class AppState: ObservableObject{
                     self.error = "Failed to login and open realm. \(error.localizedDescription)"
                 }
             }, receiveValue: { realm in
+                self.userRealm = realm
                 print("User realm location: \(realm.configuration.fileURL!.path)")
-                self.user = realm.objects(User.self).first
+                self.user = realm.objects(Users.self).first
                 do{
                     try realm.write {
                         self.user?.presenceState = .onLine
@@ -94,6 +90,7 @@ class AppState: ObservableObject{
                 
             }, receiveValue: { _ in
                 self.user = nil
+                self.userRealm = nil
             })
             .store(in: &cancellable)
     }
