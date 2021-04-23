@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct ChatRoomView: View {
+    
+    @EnvironmentObject var state: AppState
+    @Environment(\.realm) var userRealm
+    var conversation: Conversation?
+    var isPreview = false
+    
+    let padding: CGFloat = 8
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
