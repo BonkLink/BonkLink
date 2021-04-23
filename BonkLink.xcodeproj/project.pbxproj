@@ -22,6 +22,8 @@
 		281A2B792630D287008555BF /* ChatRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A2B712630D287008555BF /* ChatRoomView.swift */; };
 		281A2B7A2630D287008555BF /* Login2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A2B722630D287008555BF /* Login2.swift */; };
 		281A2B7B2630D287008555BF /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281A2B732630D287008555BF /* SignUp.swift */; };
+		9E057CB0263345080088C79F /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E057CAF263345080088C79F /* SampleData.swift */; };
+		9E057CB22633450C0088C79F /* PreviewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E057CB12633450C0088C79F /* PreviewHelpers.swift */; };
 		9E1EE8B0262E73E800FBF645 /* SingletonVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1EE8AF262E73E800FBF645 /* SingletonVM.swift */; };
 		9E38140926265D0600DBE310 /* BonkLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38140826265D0600DBE310 /* BonkLinkApp.swift */; };
 		9E38140B26265D0600DBE310 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38140A26265D0600DBE310 /* ContentView.swift */; };
@@ -40,7 +42,6 @@
 		BF6536A9262CF0670054E29F /* UserProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6536A8262CF0670054E29F /* UserProfileButton.swift */; };
 		BF6536AC262CF0970054E29F /* OnlineAlertSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6536AB262CF0970054E29F /* OnlineAlertSettings.swift */; };
 		BF6536AF262CF1180054E29F /* SetProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6536AE262CF1180054E29F /* SetProfileView.swift */; };
-		BF6536F5262D120F0054E29F /* PreviewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6536F4262D120F0054E29F /* PreviewHelpers.swift */; };
 		BF6536F9262D139C0054E29F /* PhotoCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6536F8262D139C0054E29F /* PhotoCaptureController.swift */; };
 		BF6536FD262D14ED0054E29F /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6536FC262D14ED0054E29F /* BackButton.swift */; };
 		BF653702262D158F0054E29F /* AvatarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF653701262D158F0054E29F /* AvatarButton.swift */; };
@@ -51,7 +52,6 @@
 		BF653711262D16CA0054E29F /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF653710262D16CA0054E29F /* InputField.swift */; };
 		BF653714262D17000054E29F /* CaptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF653713262D17000054E29F /* CaptionLabel.swift */; };
 		BF653717262D188A0054E29F /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF653716262D188A0054E29F /* LocationHelper.swift */; };
-		BF653720262D1B610054E29F /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF65371F262D1B610054E29F /* SampleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +70,8 @@
 		281A2B712630D287008555BF /* ChatRoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomView.swift; sourceTree = "<group>"; };
 		281A2B722630D287008555BF /* Login2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login2.swift; sourceTree = "<group>"; };
 		281A2B732630D287008555BF /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		9E057CAF263345080088C79F /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleData.swift; path = ../../../../../../Downloads/SampleData.swift; sourceTree = "<group>"; };
+		9E057CB12633450C0088C79F /* PreviewHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewHelpers.swift; path = ../../../../../../Downloads/PreviewHelpers.swift; sourceTree = "<group>"; };
 		9E1EE8AF262E73E800FBF645 /* SingletonVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonVM.swift; sourceTree = "<group>"; };
 		9E38140526265D0600DBE310 /* BonkLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonkLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E38140826265D0600DBE310 /* BonkLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonkLinkApp.swift; sourceTree = "<group>"; };
@@ -88,7 +90,6 @@
 		BF6536A8262CF0670054E29F /* UserProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileButton.swift; sourceTree = "<group>"; };
 		BF6536AB262CF0970054E29F /* OnlineAlertSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineAlertSettings.swift; sourceTree = "<group>"; };
 		BF6536AE262CF1180054E29F /* SetProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileView.swift; sourceTree = "<group>"; };
-		BF6536F4262D120F0054E29F /* PreviewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelpers.swift; sourceTree = "<group>"; };
 		BF6536F8262D139C0054E29F /* PhotoCaptureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureController.swift; sourceTree = "<group>"; };
 		BF6536FC262D14ED0054E29F /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		BF653701262D158F0054E29F /* AvatarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarButton.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		BF653710262D16CA0054E29F /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		BF653713262D17000054E29F /* CaptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionLabel.swift; sourceTree = "<group>"; };
 		BF653716262D188A0054E29F /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
-		BF65371F262D1B610054E29F /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,8 +208,8 @@
 		BF6536F3262D11E30054E29F /* Preview Content  */ = {
 			isa = PBXGroup;
 			children = (
-				BF6536F4262D120F0054E29F /* PreviewHelpers.swift */,
-				BF65371F262D1B610054E29F /* SampleData.swift */,
+				9E057CB12633450C0088C79F /* PreviewHelpers.swift */,
+				9E057CAF263345080088C79F /* SampleData.swift */,
 			);
 			path = "Preview Content ";
 			sourceTree = "<group>";
@@ -335,9 +335,7 @@
 				BF6536F9262D139C0054E29F /* PhotoCaptureController.swift in Sources */,
 				BF6536AC262CF0970054E29F /* OnlineAlertSettings.swift in Sources */,
 				9E38141F262664F500DBE310 /* AppState.swift in Sources */,
-				BF653720262D1B610054E29F /* SampleData.swift in Sources */,
 				BF653717262D188A0054E29F /* LocationHelper.swift in Sources */,
-				BF6536F5262D120F0054E29F /* PreviewHelpers.swift in Sources */,
 				BF6536A3262CF01F0054E29F /* LogoutButton.swift in Sources */,
 				BF653702262D158F0054E29F /* AvatarButton.swift in Sources */,
 				281A2B752630D287008555BF /* ChatInputBox.swift in Sources */,
@@ -347,6 +345,8 @@
 				281A2B7A2630D287008555BF /* Login2.swift in Sources */,
 				BF653714262D17000054E29F /* CaptionLabel.swift in Sources */,
 				BF6536A6262CF0470054E29F /* UserAvatarView.swift in Sources */,
+				9E057CB0263345080088C79F /* SampleData.swift in Sources */,
+				9E057CB22633450C0088C79F /* PreviewHelpers.swift in Sources */,
 				9E3814292626934300DBE310 /* Photo.swift in Sources */,
 				281A2B642630D277008555BF /* Users.swift in Sources */,
 				BF653705262D15CB0054E29F /* AvatarThumbNailView.swift in Sources */,
